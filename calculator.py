@@ -5,7 +5,7 @@ root = Tk()
 root.title("Scientific Calculator")
 
 #Taking user input
-e = Entry(root,width =30,borderwidth=5,relief=RIDGE)
+e = Entry(root,width =30,borderwidth=5,relief=RAISED)
 e.grid(row=0,column=0,columnspan=5)
 #functions
 
@@ -70,24 +70,30 @@ def evaluate():
     e.insert(0,ans)
 
 #button detailes
-lg = Button(root,text = 'lg')
+lg = Button(root,text = 'lg',width =10)
 lg.bind("<Button-1>",sc)
-lg.grid(row=0,column=0)
+lg.grid(row=1,column=0)
 
 pi = Button(root,text='pi',width=10)
 pi.bind("<Button-1>",sc)
-pi.grid(row=2,column=3)
+pi.grid(row=6,column=4)
 
 
-#clear = Button(root,text="=",width=10)
-#clear.bind("<Button-1>",sc)
-#clear.grid(row=7,column=1)
+clear = Button(root,text="C",width=10)
+clear.bind("<Button-1>",sc)
+clear.grid(row=7,column=3)
 
-plus = Button(root,text="+",width=10,relief=RIDGE,command = lambda : click("+"))
-plus.grid(row=2,column=1)
+plus = Button(root,text="+",width=10,relief=RAISED,bg="grey53",command = lambda : click("+"))
+plus.grid(row=2,column=4)
 
-min= Button(root,text="-",width=10,relief=RIDGE,command = lambda : click("-"))
+min= Button(root,text="-",width=10,relief=RAISED,bg="grey53",command = lambda : click("-"))
 min.grid(row=3,column=4)
+
+mul= Button(root,text="*",width=10,relief=RAISED,bg="grey53",command = lambda : click("*"))
+mul.grid(row=4,column=4)
+
+div= Button(root,text="/",width=10,relief=RAISED,bg="grey53",command = lambda : click("/"))
+div.grid(row=5,column=4)
 
 
 
@@ -95,25 +101,25 @@ equal = Button(root,text="=",width=10,relief=RIDGE,command = lambda : evaluate()
 equal.grid(row=7,column=1)
 #button from 0
 
-Zero = Button(root,text = "0",width =10,relief =RIDGE,command = lambda : click("0"))
+Zero = Button(root,text = "0",width =10,relief =RAISED,command = lambda : click("0"))
 Zero.grid(row =7,column =2)
-one = Button(root,text = "1",width =10,relief =RIDGE,command = lambda : click("1"))
+one = Button(root,text = "1",width =10,relief =RAISED,command = lambda : click("1"))
 one.grid(row =6,column =1)
-two = Button(root,text = "2",width =10,relief =RIDGE,command = lambda : click("2"))
+two = Button(root,text = "2",width =10,relief =RAISED,command = lambda : click("2"))
 two.grid(row =6,column =2)
-three = Button(root,text = "3",width =10,relief =RIDGE,command = lambda : click("3"))
+three = Button(root,text = "3",width =10,relief =RAISED,command = lambda : click("3"))
 three.grid(row =6,column =3)
-four = Button(root,text = "4",width =10,relief =RIDGE,command = lambda : click("4"))
+four = Button(root,text = "4",width =10,relief =RAISED,command = lambda : click("4"))
 four.grid(row =5,column =1)
-five = Button(root,text = "5",width =10,relief =RIDGE,command = lambda : click("5"))
+five = Button(root,text = "5",width =10,relief =RAISED,command = lambda : click("5"))
 five.grid(row =5,column =2)
-six = Button(root,text = "6",width =10,relief =RIDGE,command = lambda : click("6"))
+six = Button(root,text = "6",width =10,relief =RAISED,command = lambda : click("6"))
 six.grid(row =5,column =3)
-seven = Button(root,text = "7",width =10,relief =RIDGE,command = lambda : click("7"))
+seven = Button(root,text = "7",width =10,relief =RAISED,command = lambda : click("7"))
 seven.grid(row =4,column =1)
-eight = Button(root,text = "8",width =10,relief =RIDGE,command = lambda : click("8"))
+eight = Button(root,text = "8",width =10,relief =RAISED,command = lambda : click("8"))
 eight.grid(row =4,column =2)
-nine = Button(root,text = "9",width =10,relief =RIDGE,command = lambda : click("9"))
+nine = Button(root,text = "9",width =10,relief =RAISED,command = lambda : click("9"))
 nine.grid(row =4,column =3)
 
 

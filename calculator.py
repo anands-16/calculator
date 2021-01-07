@@ -1,23 +1,35 @@
 from tkinter import *
+import math as m
 root = Tk()
 #Title for calc
 root.title("Scientific Calculator")
 
 #Taking user input
-user_input = Entry(root,width =30,borderwidth=5,relief=RIDGE)
-user_input.grid(row=0,column=0,columnspan=5)
+e = Entry(root,width =30,borderwidth=5,relief=RIDGE)
+e.grid(row=0,column=0,columnspan=5)
+#functions
+
+def click(to_click):
+    old = e.get()
+    e.delete(0,END)
+    e.insert(0,old+to_click)
+    return
+
 
 def sc(event):
     key = event.widget
     text = key['text']
-    no = user_input.get()
+    no = e.get()
     result = ''
+
     if text=="deg":
         result = str(m.degrees(float(no)))
     if text =="sin":
         result = str(m.sin(float(no)))
     if text=="cos":
         result = str(m.cos(float(no)))
+    if text=="x!":
+        result = str(m.factorial(float(no)))
     if text=="tan":
         result = str(m.tan(float(no)))
     if text=="lg":
@@ -30,50 +42,83 @@ def sc(event):
         if no=="":
             result = str(m.pi)
         else:
-            result=str(float(no)* m.pi)
-    if text=="user_input":
+            result=str(float(no) * m.pi)
+    if text == "e":
         if no=="":
-            result=str(m.user_input)
+            result = str(m.e)
         else:
-            result=str(m.user_input**float(no))
-
-    user_input.delete(0,END)
-    user_input.insert(0,result)
+            result = str(m.e**float(no))
 
 
+    e.delete(0,END)
+    e.insert(0,result)
 
-def click(to_click):
-    old = user_input.get()
-    user_input.delete(0,END)
-    user_input.insert(0,old+to_click)
+
+def clear():
+    e.delete(0,END)
     return
 
+def bkspace():
+    current = e.get()
+    length = len(current)-1
+    e.delete(length,END)
+
+def evaluate():
+    ans = e.get()
+    ans = eval(ans)
+    e.delete(0,END)
+    e.insert(0,ans)
+
+#button detailes
 lg = Button(root,text = 'lg')
 lg.bind("<Button-1>",sc)
 lg.grid(row=0,column=0)
 
-Zero = Button(root,text = "0",width =30,relief =RIDGE,command = lambda : click("0"))
+pi = Button(root,text='pi',width=10)
+pi.bind("<Button-1>",sc)
+pi.grid(row=2,column=3)
+
+
+#clear = Button(root,text="=",width=10)
+#clear.bind("<Button-1>",sc)
+#clear.grid(row=7,column=1)
+
+plus = Button(root,text="+",width=10,relief=RIDGE,command = lambda : click("+"))
+plus.grid(row=2,column=1)
+
+min= Button(root,text="-",width=10,relief=RIDGE,command = lambda : click("-"))
+min.grid(row=3,column=4)
+
+
+
+equal = Button(root,text="=",width=10,relief=RIDGE,command = lambda : evaluate())
+equal.grid(row=7,column=1)
+#button from 0
+
+Zero = Button(root,text = "0",width =10,relief =RIDGE,command = lambda : click("0"))
 Zero.grid(row =7,column =2)
+one = Button(root,text = "1",width =10,relief =RIDGE,command = lambda : click("1"))
+one.grid(row =6,column =1)
+two = Button(root,text = "2",width =10,relief =RIDGE,command = lambda : click("2"))
+two.grid(row =6,column =2)
+three = Button(root,text = "3",width =10,relief =RIDGE,command = lambda : click("3"))
+three.grid(row =6,column =3)
+four = Button(root,text = "4",width =10,relief =RIDGE,command = lambda : click("4"))
+four.grid(row =5,column =1)
+five = Button(root,text = "5",width =10,relief =RIDGE,command = lambda : click("5"))
+five.grid(row =5,column =2)
+six = Button(root,text = "6",width =10,relief =RIDGE,command = lambda : click("6"))
+six.grid(row =5,column =3)
+seven = Button(root,text = "7",width =10,relief =RIDGE,command = lambda : click("7"))
+seven.grid(row =4,column =1)
+eight = Button(root,text = "8",width =10,relief =RIDGE,command = lambda : click("8"))
+eight.grid(row =4,column =2)
+nine = Button(root,text = "9",width =10,relief =RIDGE,command = lambda : click("9"))
+nine.grid(row =4,column =3)
 
 
 
 
-
-
-def clear():
-    user_input.delete(0,END)
-    return
-
-def bkspace():
-    current = user_input.get()
-    length = len(current)-1
-    user_input.delete(length,END)
-
-def evaluate():
-    ans = user_input.get()
-    ans = eval(ans)
-    user_input.delete(0,END)
-    user_input.insert(0,END)
 
 
 

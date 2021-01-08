@@ -70,41 +70,41 @@ def evaluate():
     e.insert(0,ans)
 
 #button detailes
-log = Button(root,text = 'log',width =10)
+log = Button(root,text = 'log',width =10,bg="gray85")
 log.bind("<Button-1>",sc)
 log.grid(row=2,column=1)
 
-pi = Button(root,text='Pi',width=10)
+pi = Button(root,text='Pi',width=10,bg="gray85")
 pi.bind("<Button-1>",sc)
 pi.grid(row=5,column=0)
 
-sin= Button(root,text='sin',width=10)
+sin= Button(root,text='sin',width=10,bg="gray85")
 sin.bind("<Button-1>",sc)
 sin.grid(row=2,column=0)
 
-cos = Button(root,text='cos',width=10)
+cos = Button(root,text='cos',width=10,bg="gray85")
 cos.bind("<Button-1>",sc)
 cos.grid(row=3,column=0)
 
-tan = Button(root,text='tan',width=10)
+tan = Button(root,text='tan',width=10,bg="gray85")
 tan.bind("<Button-1>",sc)
 tan.grid(row=4,column=0)
 
-Sqrt = Button(root,text = 'Sqrt',width =10)
+Sqrt = Button(root,text = 'Sqrt',width =10,bg="gray85")
 Sqrt.bind("<Button-1>",sc)
 Sqrt.grid(row=6,column=0)
 
-x = Button(root,text = 'x!',width =10)
+x = Button(root,text = 'x!',width =10,bg="gray85")
 x.bind("<Button-1>",sc)
 x.grid(row=3,column=1)
 
-deg = Button(root,text = 'Deg',width =10)
+deg = Button(root,text = 'Deg',width =10,bg="gray85")
 deg.bind("<Button-1>",sc)
 deg.grid(row=7,column=0)
 
 
 
-clear = Button(root,text="C",width=10)
+clear = Button(root,text="C",width=10,bg="gray85")
 clear.bind("<Button-1>",sc)
 clear.grid(row=2,column=4)
 
@@ -120,10 +120,10 @@ mul.grid(row=4,column=4)
 div= Button(root,text="/",width=10,relief=RAISED,bg="grey53",command = lambda : click("/"))
 div.grid(row=5,column=4)
 
-bracket= Button(root,text="(",width=10,relief=RAISED,command = lambda : click("("))
+bracket= Button(root,text="(",width=10,relief=RAISED,bg="gray85",command = lambda : click("("))
 bracket.grid(row=3,column=2)
 
-bracket1= Button(root,text=")",width=10,relief=RAISED,command = lambda : click(")"))
+bracket1= Button(root,text=")",width=10,relief=RAISED,bg="gray85",command = lambda : click(")"))
 bracket1.grid(row=3,column=3)
 
 
@@ -131,7 +131,7 @@ bracket1.grid(row=3,column=3)
 equal = Button(root,text="=",width=10,relief=RIDGE,bg="blue",command = lambda : evaluate())
 equal.grid(row=7,column=4)
 
-Backspace=Button(root,text="<-",width=10,relief=RIDGE,command = lambda : bkspace())
+Backspace=Button(root,text="<-",width=10,relief=RIDGE,bg="gray85",command = lambda : bkspace())
 Backspace.grid(row=7,column=3)
 #button from 0
 
@@ -156,7 +156,7 @@ eight.grid(row =4,column =2)
 nine = Button(root,text = "9",width =10,relief =RAISED,command = lambda : click("9"))
 nine.grid(row =4,column =3)
 
-dot = Button(root,text = ".",width =10,relief =RAISED,command = lambda : click("9"))
+dot = Button(root,text = ".",width =10,relief =RAISED,bg="gray85",command = lambda : click("9"))
 dot.grid(row =7,column =1)
 
 
